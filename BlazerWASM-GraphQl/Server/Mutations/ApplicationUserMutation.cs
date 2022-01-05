@@ -48,12 +48,13 @@ namespace demo_graphql.Mutations
             }
             catch(ArgumentNullException)
             {
-                return new StatusResult($"No user with ID {idInput.Id}, found.");
+                throw new ArgumentNullException($"No user with ID {idInput.Id}, found.");
+                //return new StatusResult($"No user with ID {idInput.Id}, found.");
             }
             catch (Exception ex)
             {
-                // ignore
-                return new StatusResult($"Unable to delete user with ID {idInput.Id}");
+                throw new Exception($"Unable to delete user with ID {idInput.Id}, something went wrong!");
+                //return new StatusResult($"Unable to delete user with ID {idInput.Id}");
             }
         }
     }

@@ -9,5 +9,10 @@ namespace demo_graphql.Queries
             return context.ApplicationUsers
                 .ToList();
         }
+
+        public ApplicationUser GetApplicationUser(int id, [Service] DartDbContext context)
+        {
+            return context.ApplicationUsers.First(a => a.Id == id);
+        }
     }
 }
