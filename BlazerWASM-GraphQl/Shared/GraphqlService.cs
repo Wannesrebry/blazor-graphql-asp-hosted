@@ -1,6 +1,8 @@
-﻿using GraphQL;
+﻿
+using GraphQL;
 using GraphQL.Client.Http;
 using GraphQL.Client.Serializer.Newtonsoft;
+using shared.Data;
 using shared.models;
 
 namespace shared
@@ -24,11 +26,10 @@ namespace shared
             OperationName = "fetch"
         };
 
-        public async Task<GraphQLResponse<List<ApplicationUser>>> FetchApplicationUsers()
+        public async Task<GraphQLResponse<ApplicationUsersData>> FetchApplicationUsers()
         {
-            var fetchQuery = await _graphqlClient.SendQueryAsync<List<ApplicationUser>>(_fetchUsers);
+            var fetchQuery = await _graphqlClient.SendQueryAsync<ApplicationUsersData>(_fetchUsers);
             return fetchQuery;
         }
-
     }
 }

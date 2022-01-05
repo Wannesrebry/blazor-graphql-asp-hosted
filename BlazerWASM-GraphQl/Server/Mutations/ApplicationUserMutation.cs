@@ -46,6 +46,10 @@ namespace demo_graphql.Mutations
                 await context.SaveChangesAsync();
                 return new StatusResult($"User ID {idInput.Id} with name: '{userName}' has been deleted succesfully.");
             }
+            catch(ArgumentNullException)
+            {
+                return new StatusResult($"No user with ID {idInput.Id}, found.");
+            }
             catch (Exception ex)
             {
                 // ignore

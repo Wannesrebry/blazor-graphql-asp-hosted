@@ -3,7 +3,7 @@
       "windowsAuthentication": false,
       "anonymousAuthentication": true,
       "iisExpress": {
-        "applicationUrl": "http://localhost:26104",
+        "applicationUrl": "http://localhost:26105",
         "sslPort": 44338
       }
     },
@@ -14,7 +14,7 @@
         "launchBrowser": true,
         "launchUrl": "graphql",
         "inspectUri": "{wsProtocol}://{url.hostname}:{url.port}/_framework/debug/ws-proxy?browser={browserInspectUri}",
-        "applicationUrl": "https://localhost:7116;http://localhost:5116",
+        "applicationUrl": "https://localhost:7117;http://localhost:5117",
         "environmentVariables": {
           "ASPNETCORE_ENVIRONMENT": "Development"
         }
